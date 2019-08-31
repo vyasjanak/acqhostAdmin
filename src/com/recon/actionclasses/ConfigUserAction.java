@@ -32,6 +32,7 @@ public class ConfigUserAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	
 		
 		HttpSession session = request.getSession(true);
 		String username = (String)session.getAttribute("username");
@@ -43,7 +44,7 @@ public class ConfigUserAction extends Action {
 		
 		if (actionName != null && actionName.equals("add"))
 		{
-			System.out.println("actionName =  "+actionName);
+			//System.out.println("actionName =  "+actionName);
 			
 			GeneralService generalService = new GeneralServiceImpl();
 			String password = generalService.crypt(configUserForm.getPassword());
