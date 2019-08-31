@@ -44,7 +44,7 @@ public class ConfigUserAction extends Action {
 		
 		if (actionName != null && actionName.equals("add"))
 		{
-			//System.out.println("actionName =  "+actionName);
+			System.out.println("actionName =  "+actionName);
 			
 			GeneralService generalService = new GeneralServiceImpl();
 			String password = generalService.crypt(configUserForm.getPassword());
