@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/conf/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>definitions-config</param-name>
+      <param-value>/WEB-INF/conf/CP-tiles.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>tempfile.dir</param-name>
+    <param-value>tmpfiles</param-value>
+  </context-param>
+  <welcome-file-list>
+    <welcome-file>login_signin.jsp</welcome-file>
+  </welcome-file-list>
+  <session-config>
+    <session-timeout>60</session-timeout>
+  </session-config>
+ 
+<servlet>
+  <description>API for raiseDispute</description>
+  <servlet-name>MaxRaiseLimitAction</servlet-name>
+  <servlet-class>com.recon.actionclasses.MaxRaiseLimitAction</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>MaxRaiseLimitAction</servlet-name>
+  <url-pattern>/MaxRaiseLimitAction</url-pattern>
+</servlet-mapping>
+  
+  <servlet>
+    <description>Report</description>
+    <display-name>Report</display-name>
+    <servlet-name>DownloadAccoiunt</servlet-name>
+    <servlet-class>com.recon.actionclasses.DownloadAccoiunt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DownloadAccoiunt</servlet-name>
+    <url-pattern>/DownloadAccoiunt</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/errorPage.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/errorPage.jsp</location>
+  </error-page>
+  
+  <!-- <jsp-config>
+  <jsp-property-group>
+    <url-pattern>*.jsp</url-pattern>
+    <trim-directive-whitespaces>true</trim-directive-whitespaces>
+  </jsp-property-group>
+  </jsp-config> -->
+  
+</web-app>

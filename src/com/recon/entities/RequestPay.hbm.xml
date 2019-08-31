@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.recon.entities.RequestPay" table="acq_req_pay_master">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="message_identifier" type="java.lang.String">
+			<column name="message_identifier" length="100" />
+		</property>
+		<property name="txn_timestamp" type="java.lang.String">
+			<column name="txn_timestamp" length="100" />
+		</property>
+		<property name="org_id" type="java.lang.String">
+			<column name="org_id" length="100" />
+		</property>
+		<property name="txn_id" type="java.lang.String">
+			<column name="txn_id" length="100" /> 
+		</property>
+		
+		<!-- <property name="desc_txn" type="java.lang.String">
+			<column name="desc_txn" length="100" />
+		</property> -->
+		<!-- <property name="cust_ref_id" type="java.lang.String">
+			<column name="cust_ref_id" length="100" />
+		</property> -->
+		<!-- <property name="txn_url" type="java.lang.String">
+			<column name="txn_url" length="100" />
+		</property> -->
+		<property name="txn_type" type="java.lang.String">
+			<column name="txn_type" length="100" />
+		</property>
+		<property name="txn_ref_id" type="java.lang.String">
+			<column name="txn_ref_id" length="100" />
+		</property>
+		<property name="original_txn_id" type="java.lang.String">
+			<column name="original_txn_id" length="100" />
+		</property>
+		<property name="tag_id" type="java.lang.String">
+			<column name="tag_id" length="100" />
+		</property>
+		<property name="tid" type="java.lang.String">
+			<column name="tid" length="100" />
+		</property>
+		<!-- <property name="merchant_id" type="java.lang.String">
+			<column name="merchant_id" length="100" />
+		</property> -->
+		<!-- <property name="merchant_type" type="java.lang.String">
+			<column name="merchant_type" length="100" />
+		</property> -->
+		<property name="avc" type="java.lang.String">
+			<column name="avc" length="100" />
+		</property>
+		<property name="wim" type="java.lang.String">
+			<column name="wim" length="100" />
+		</property>
+		<property name="toll_plaza_id" type="java.lang.String">
+			<column name="toll_plaza_id" length="100" />
+		</property>
+		<property name="toll_plaza_name" type="java.lang.String">
+			<column name="toll_plaza_name" length="100" />
+		</property>
+		<property name="toll_geo_code" type="java.lang.String">
+			<column name="toll_geo_code" length="100" />
+		</property>
+		<property name="toll_plaza_type" type="java.lang.String">
+			<column name="toll_plaza_type" length="100" />
+		</property>
+		<property name="plaza_reader_id" type="java.lang.String">
+			<column name="plaza_reader_id" length="100" />
+		</property>
+		<!-- <property name="issuer_Id" type="java.lang.String">
+			<column name="issuer_Id" length="100" />
+		</property> -->
+		<property name="txn_amount" type="java.lang.Integer">
+			<column name="txn_amount"/>
+		</property>
+		<property name="acquirer_id" type="java.lang.String">
+			<column name="acq_id" length="100" />
+		</property>
+		<property name="vehicle_no" type="java.lang.String">
+			<column name="vehicle_no" length="100" />
+		</property>
+		<property name="is_commercial" type="java.lang.String">
+			<column name="is_commercial" length="100" />
+		</property>
+		<!-- <property name="sign_data" type="java.lang.String">
+			<column name="" length="100" />
+		</property>
+		<property name="public_key_cvv" type="java.lang.String">
+			<column name="public_key_cvv" length="100" />
+		</property>
+		<property name="vehicle_auth" type="java.lang.String">
+			<column name="vehicle_auth" length="100" />
+		</property> -->
+		<property name="resp_status" type="java.lang.Integer">
+			<column name="resp_status" />
+		</property>
+		<property name="resp_time" type="java.lang.String">
+			<column name="resp_time" length="100" />
+		</property>
+		<property name="resp_id" type="java.lang.String">
+			<column name="resp_id" length="100" />
+		</property>
+		<property name="cbs_reference_no" type="java.lang.String">
+			<column name="cbs_reference_no" length="100" />
+		</property>
+		<property name="cbs_response_date" type="java.lang.String">
+			<column name="cbs_response_date" length="100" />
+		</property>
+		<property name="exception_code" type="java.lang.String">
+			<column name="exception_code" length="100" />
+		</property>
+		<property name="recon_status" type="java.lang.String">
+			<column name="recon_status" length="100" />
+		</property>
+		<property name="txn_time" type="java.lang.String">
+			<column name="txn_time" length="100" />
+		</property>
+		
+	</class>
+</hibernate-mapping>

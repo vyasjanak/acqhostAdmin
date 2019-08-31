@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+
+
+	<global>
+
+
+		<constant>
+			<constant-name>postalCode</constant-name>
+			<constant-value>^\d{5}\d*$</constant-value>
+		</constant>
+
+
+	</global>
+
+<!--	<formset>-->
+<!---->
+<!--		 Login Form -->
+<!--		<form name="logonForm">-->
+<!--			<field property="username" depends="required">-->
+<!--				<arg key="logonForm.username" />-->
+<!--			</field>-->
+<!--			<field property="password" depends="required,mask">-->
+<!--				<arg key="logonForm.password" />-->
+<!--				<var>-->
+<!--					<var-name>mask</var-name>-->
+<!--					<var-value>^[0-9a-zA-Z]*$</var-value>-->
+<!--				</var>-->
+<!--			</field>-->
+<!--		</form>-->
+<!---->
+<!--	</formset>-->
+<!---->
+<!--	 A formset for latin locale -->
+<!--	<formset language="fr">-->
+<!--		<constant>-->
+<!--			<constant-name>postalCode</constant-name>-->
+<!--			<constant-value>^[0-9a-zA-Z]*$</constant-value>-->
+<!--		</constant>-->
+<!---->
+<!--		<form name="logonForm">-->
+<!--			<field property="username" depends="required">-->
+<!--				<arg key="logonForm.username" />-->
+<!--			</field>-->
+<!--			<field property="password" depends="required,mask">-->
+<!--				<arg key="logonForm.password" />-->
+<!--				<var>-->
+<!--					<var-name>mask</var-name>-->
+<!--					<var-value>^[0-9a-zA-Z]*$</var-value>-->
+<!--				</var>-->
+<!--			</field>-->
+<!--		</form>-->
+<!--	</formset>-->
+<!---->
+<!--	 A formset for Business Model -->
+<!--	<formset >-->
+<!--		<form name="businessModelForm">-->
+<!--		-->
+<!--			<field -->
+<!--				property="businessModelName" -->
+<!--				depends="required">-->
+<!--				<arg key="admin.businessmodel.bmodelname" bundle="fields" />-->
+<!--			</field>-->
+<!--			-->
+<!--			<field -->
+<!--				property="businessModelDesc" -->
+<!--				depends="required">-->
+<!--				<arg key="admin.businessmodel.bmodeldesc" bundle="fields"/>-->
+<!--			</field>-->
+<!--			-->
+<!--		</form>-->
+<!--	</formset>-->
+	
+	
+</form-validation>

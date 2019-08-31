@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<!-- ===============  Data Sources  =============== -->
+
+	<data-sources />
+	
+	<!-- ===============  Form Beans =============== -->
+	
+	<form-beans>
+	
+		<form-bean name="dashboardForm"
+			type="com.recon.formclasses.DashboardForm">
+		</form-bean>
+		
+		<form-bean name="loginPageForm"
+			type="com.recon.formclasses.LoginPageForm">
+		</form-bean>
+		
+		<form-bean name="changePasswordForm"
+			type="com.recon.formclasses.ChangePasswordForm">
+		</form-bean>
+		
+		<form-bean name="configRoleForm"
+			type="com.recon.formclasses.ConfigRoleForm">
+		</form-bean>
+		
+		<form-bean name="configUserForm"
+			type="com.recon.formclasses.ConfigUserForm">
+		</form-bean>
+		
+		<form-bean name="reportForm"
+			type="com.recon.formclasses.ReportForm">
+		</form-bean>
+		
+		
+		 <form-bean name="requestDetailForm"
+			type="com.recon.formclasses.RequestDetailForm">
+		</form-bean> 
+		
+		<form-bean name="exceptionDetailForm"
+			type="com.recon.formclasses.ExceptionDetailForm">
+		</form-bean>
+		
+		<form-bean name="merchantMasterForm" type="com.recon.formclasses.MerchantMasterForm" /> 
+		
+		<form-bean name="plazaForm"
+			type="com.recon.formclasses.PlazaForm">
+		</form-bean>
+		
+		<form-bean name="readerForm"
+			type="com.recon.formclasses.ReaderForm">
+		</form-bean>
+		
+		<form-bean name="reportForm"
+			type="com.recon.formclasses.ReportForm">
+		</form-bean>
+		
+		<form-bean name="dispute" type="com.recon.formclasses.Dispute" />
+		<form-bean name="disputeRaiseForm" type="com.recon.formclasses.DisputeRaiseForm" />
+		<form-bean name="disputeAdjForm" type="com.recon.formclasses.DisputeAdjForm" />
+		<form-bean name="recontxns" type="com.recon.formclasses.Txns" />
+		
+		<form-bean name="payoutgenerationForm" type="com.recon.formclasses.PayoutGenerationForm" />
+		
+	</form-beans>
+
+	<!-- ===============  Global Exception  =============== -->
+
+	<global-exceptions />
+
+	<!-- ===============  Global Forwards  =============== -->
+
+	<global-forwards />
+
+	<!-- ===============  Action Mappings  =============== -->
+	
+	<action-mappings>
+		<action path="/loginPage" name="loginPageForm"
+			type="com.recon.actionclasses.LoginPageAction"
+			scope="request">			
+			<forward name="success" path="/index.jsp"></forward>
+			<forward name="fail" path="/login_signin.jsp"></forward>
+			<forward name="forgot" path="/forgotPassword.do"></forward>
+			<forward name="firstLogin" path="/changePassword.do"></forward>
+		</action>
+		
+		<action path="/logout" 
+			type="com.recon.actionclasses.LogoutAction"
+			scope="request">			
+			<forward name="success" path="/login_signin.jsp"></forward>
+		</action>
+		
+		<action path="/dashboard" name="dashboardForm"
+			type="com.recon.actionclasses.DashboardAction"
+			scope="request">			
+			<forward name="success" path="/index.jsp"></forward>
+		</action>
+		
+		<action path="/ajaxAction" type="com.recon.actionclasses.AjaxAction" scope="request" >		
+			<forward name="loginpage" path="/login_signin.jsp"></forward>
+		</action>
+		
+		<action path="/forgotPassword" name="loginPageForm"
+			type="com.recon.actionclasses.ForgotPasswordAction"
+			scope="request">			
+			<forward name="login" path="/login_signin.jsp"></forward>
+			<forward name="success" path="/login_forgot.jsp"></forward>
+			<!-- <forward name="failed" path="/login_forgot.jsp"></forward> -->
+		</action>
+		
+		<action path="/changePassword" name="changePasswordForm"
+			type="com.recon.actionclasses.ChangePasswordAction"
+			scope="request">			
+			<forward name="success" path="/ChangePassword.jsp"></forward>
+			<forward name="login" path="/login_signin.jsp"></forward>
+		</action>
+		
+		<action path="/configRole" name="configRoleForm"
+			type="com.recon.actionclasses.ConfigRoleAction"
+			scope="request">			
+			<forward name="success" path="/Recon_Config_Role.jsp"></forward>
+		</action>
+		
+		<action path="/configUser" name="configUserForm"
+			type="com.recon.actionclasses.ConfigUserAction"
+			scope="request">			
+			<forward name="success" path="/Recon_Config_User.jsp"></forward>
+		</action>
+		
+		<!-- <action path="/report" name="reportForm"
+			type="com.recon.actionclasses.ReportAction"
+			scope="request">			
+			<forward name="success" path="/walletReports.jsp"></forward>
+		</action> -->
+		<!--  exceptionDetailForm -->
+		
+		<action path="/RequestDetails" name="requestDetailForm"
+			type="com.recon.actionclasses.RequestDetailsAction"
+			scope="request">			
+			<forward name="success" path="/RequestDetails.jsp"></forward>
+		</action>
+		
+		
+		<action path="/ExceptionDetails" name="exceptionDetailForm"
+			type="com.recon.actionclasses.ExceptionDetailsAction"
+			scope="request">			
+			<forward name="success" path="/ExceptionDetails.jsp"></forward>
+		</action>
+		
+		
+		<action path="/merchantMaster" type="com.recon.actionclasses.MerchantMasterAction" name="merchantMasterForm" scope="request">
+			<forward name="success" path="/merchantMaster.jsp" />
+			<forward name="addNew" path="/addMerchant.jsp" />
+		</action>
+		
+		
+		
+		<action path="/Plaza" name="plazaForm"
+			type="com.recon.actionclasses.PlazaAction"
+			scope="request">			
+			<forward name="success" path="/plaza.jsp"></forward>
+			<forward name="addNewPlazaForm" path="/addPlaza.jsp"></forward>
+			<forward name="fail" path="/plaza.jsp"></forward>
+		</action>
+		
+		<action path="/Reader" name="readerForm"
+			type="com.recon.actionclasses.ReaderAction"
+			scope="request">			
+			<forward name="success" path="/reader.jsp"></forward>
+			<forward name="fail" path="/reader.jsp"></forward>
+		</action>
+		
+		<action path="/report" name="reportForm" type="com.recon.actionclasses.ReportAction" scope="request">			
+			<forward name="success" path="/Reports.jsp"></forward>
+		</action>
+		
+		
+		<action path="/raiseDispute" type="com.recon.actionclasses.DisputeRaiseAction" parameter="dispatch" name="disputeRaiseForm">
+			<forward name="add" path="/raisedispute.jsp" />
+			<!-- <forward name="uploadadd" path="/raisedispute.jsp" /> -->
+		</action>
+		<action path="/docDispute" type="com.recon.actionclasses.DisputeDocAction" scope="session" parameter="dispatch" name="disputeRaiseForm">
+			<forward name="add" path="/disputedoc.jsp" />
+		</action>
+		<action path="/closeDispute" type="com.recon.actionclasses.CloseDisputeAction" parameter="dispatch" name="disputeRaiseForm">
+			<forward name="add" path="/closedispute.jsp" />
+		</action>
+		
+		<action path="/download" name="disputeRaiseForm" type="com.recon.actionclasses.FileDownload" parameter="E:\disputedTxnsDocs\" />
+		
+		<!-- Added by Suraj for Vehicle Pic Downloading -->
+		<action path="/vehPicDownload" name="disputeRaiseForm" type="com.recon.actionclasses.VehiclePicDownload" parameter="E:\disputedTxnsDocs\" />
+		
+		
+		<action path="/postDisputeAdj" type="com.recon.actionclasses.DisputeAdjPostAction" parameter="dispatch" name="disputeAdjForm">
+			<forward name="add" path="/disputeAdjpost.jsp" />
+		</action>
+		
+		<action path="/postTxns" type="com.recon.actionclasses.TxnsPostAction" parameter="dispatch" name="recontxns">
+			<forward name="add" path="/recontxnspost.jsp" />
+		</action>
+		
+		<action path="/nrnstxns" type="com.recon.actionclasses.ExceptionTxnsAction" scope="request" parameter="dispatch" name="recontxns">
+			<forward name="add" path="/exctransactions.jsp"/>
+		</action>
+		
+		<action path="/docPayoutnew" type="com.recon.actionclasses.PayoutDocRetrieveAction" scope="session" parameter="dispatch" name="payoutgenerationForm">
+			<forward name="add" path="/downloadpayout.jsp" />
+		</action>
+
+
+		<action path="/docPayout" type="com.recon.actionclasses.PayoutDocAction" scope="session" parameter="dispatch" name="payoutgenerationForm">
+			<forward name="add" path="/downloadpayout.jsp" />
+		</action>
+		
+	</action-mappings>
+	
+	<!-- ===============  Message Resources  =============== -->
+
+	<message-resources
+		parameter="com.recon.actionclasses.ApplicationResources" />
+		
+		<!-- ===============  Tiles plugin =============== -->
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+
+		<!-- Path to XML definition file -->
+		<set-property property="definitions-config"
+			value="/WEB-INF/conf/CP-tiles.xml" />
+		<!-- Set Module-awareness to true -->
+		<set-property property="moduleAware" value="false"/>
+	</plug-in>
+
+</struts-config>
+

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Generated Jul 31, 2018 1:29:57 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.recon.entities.DisputeMaster" table="dispute_master_npci">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="acq_txn_id" type="java.lang.String">
+            <column name="acq_txn_id" />
+        </property>
+        <property name="toll_txn_id" type="java.lang.String">
+            <column name="toll_txn_id" />
+        </property>
+        <property name="toll_plaza_id" type="java.lang.String">
+            <column name="toll_plaza_id" />
+        </property>
+        <!-- <property name="dispute_type" type="java.lang.String">
+            <column name="dispute_type" />
+        </property>
+        <property name="amount" type="float">
+            <column name="amount" />
+        </property>
+        <property name="adjustment_type" type="java.lang.String">
+            <column name="adjustment_type" />
+        </property> -->
+        <property name="dispute_desc" type="java.lang.String">
+            <column name="dispute_desc" />
+        </property>
+        <property name="evidence_doc" type="java.lang.String">
+            <column name="evidence_doc" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="status" />
+        </property>
+        <!-- <property name="date_time" type="java.lang.String">
+            <column name="date_time" />
+        </property> -->
+        <property name="reason_code" type="java.lang.String">
+            <column name="reason_code" />
+        </property>
+        <property name="function_code" type="java.lang.String">
+            <column name="function_code" />
+        </property>
+        <!-- <property name="reason_code_type" type="java.lang.String">
+            <column name="reason_code_type" />
+        </property> -->
+        <property name="full_par_indicator" type="java.lang.String">
+            <column name="full_partial_indicator" />
+        </property>
+        <property name="tag_id" type="java.lang.String">
+            <column name="tag_id" />
+        </property>
+        <property name="txn_time" type="java.lang.String">
+            <column name="txn_time" />
+        </property>
+        <property name="issuer_id" type="java.lang.String">
+            <column name="issuer_id" />
+        </property>
+        <property name="acquirer_id" type="java.lang.String">
+            <column name="acquirer_id" />
+        </property>
+        <property name="txn_amount" type="java.lang.String">
+            <column name="txn_amount" />
+        </property>
+        <property name="tid" type="java.lang.String">
+            <column name="tid" />
+        </property>
+        <property name="mmt" type="java.lang.String">
+            <column name="mmt" />
+        </property>
+        <property name="txn_type" type="java.lang.String">
+            <column name="txn_type" />
+        </property>
+        
+        <property name="rodt" type="java.lang.String">
+            <column name="rodt" />
+        </property>
+        <!-- <property name="remark" type="java.lang.String">
+            <column name="remark" />
+        </property> -->
+    </class>
+</hibernate-mapping>
